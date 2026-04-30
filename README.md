@@ -39,13 +39,13 @@ Store the following secrets in your GitHub repository settings:
 ## Installation Steps
 
 
-### 1. Install Git
+### 4. Install Git
 
 ```bash
 yum install git -y
 ```
 
-### 2. Install Ingress-Nginx
+### 5. Install Ingress-Nginx
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
@@ -53,7 +53,7 @@ kubectl get pods -n ingress-nginx
 kubectl get svc -n ingress-nginx
 ```
 
-### 7. Install ArgoCD
+### 6. Install ArgoCD
 
 ```bash
 kubectl create namespace argocd
@@ -62,47 +62,47 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}
 kubectl get svc -n argocd
 ```
 
-### 8. Create Application Namespace
+### 7. Create Application Namespace
 
 ```bash
 kubectl create namespace microservices
 ```
 
-### 9. Retrieve ArgoCD Initial Admin Password
+### 8. Retrieve ArgoCD Initial Admin Password
 
 ```bash
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
-### Step 6: Clone Repository on server
+### Step 9: Clone Repository on server
 ```bash
 git clone <your-repository-url>   
 ```
 
-### Step 7: Deploy Backend
+### Step 10 : Deploy Backend
 ```bash
 cd k8s-argocd/backend
 kubectl apply -f .
 # Wait for Load Balancer to be assigned
 kubectl get svc -n microservices
 ```
-### Step 9: Deploy Frontend
+### Step 11: Deploy Frontend
 ```bash
 cd ../frontend
 kubectl apply -f .
 ```
 
-### Step 10: Deploy EFK Stack (Elasticsearch, Fluent Bit, Kibana)
+### Step 12: Deploy EFK Stack (Elasticsearch, Fluent Bit, Kibana)
 ```bash
 cd ../efk-stack
 kubectl apply -f .
 ```
 
-### Step 11: Install Grafana & Prometheus
+### Step 13: Install Grafana & Prometheus
 ```bash
 cd ../../grafana-prometheous
 # Follow installation commands in grafana-prometheous/README.md
 ```
-### Step 12: Access the Application
+### Step 14: Access the Application
 - Get the Ingress Load Balancer URL:
 ```bash
 kubectl get ingress -n google
