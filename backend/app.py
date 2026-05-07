@@ -248,7 +248,7 @@ def build_order_receipt(order_payload):
         "--------------\n"
         f"Total Quantity: {total_quantity}\n"
         f"Total Paid: Rs. {float(order_payload['total_amount']):.2f}\n\n"
-        "Thank you for shopping with Google Store."
+        "Thank you for shopping with Harshi Akki Store."
     )
 
     html_lines = "".join(
@@ -272,8 +272,8 @@ def build_order_receipt(order_payload):
     escaped_address = escape(str(shipping_address)).replace("\n", "<br>")
     html_body = f"""
     <div style="font-family:Arial,sans-serif;max-width:760px;margin:0 auto;padding:24px;color:#202124;">
-      <h2 style="margin-top:0;color:#1a73e8;">multicloud devops veera sir store Receipt</h2>
-      <p>Your order <strong>#{order_payload['id']}</strong> has been placed successfully.</p>
+      <h2 style="margin-top:0;color:#1a73e8;">multicloud devops by veera sir store Receipt</h2>
+      <p>Your order Akki <strong>#{order_payload['id']}</strong> has been placed successfully narnii.</p>
 
       <div style="border:1px solid #e5e7eb;border-radius:10px;padding:14px;margin:16px 0;background:#f8fafc;">
         <h3 style="margin:0 0 8px;color:#0f172a;">Customer Details</h3>
@@ -328,7 +328,7 @@ def send_order_receipt_email(order_payload):
         raise RuntimeError("MAIL_PASSWORD is not configured")
 
     msg = Message(
-        f"multicloud devops veera sir store - Order #{order_payload['id']}",
+        f"multicloud devops by veera sir store - Order #{order_payload['id']}",
         sender=app.config["MAIL_USERNAME"],
         recipients=[order_payload["shipping_email"]],
     )
