@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: books
-        image: 992382530518.dkr.ecr.us-east-1.amazonaws.com/shopping-site-books:0ec03a836cf61103561ec70baad8f4265fbe2a6e
+        image: 992382530518.dkr.ecr.us-east-1.amazonaws.com/shopping-site-books:e8925b275de86b679c59facd634211879c36fef9
         ports:
         - containerPort: 80
 ---
