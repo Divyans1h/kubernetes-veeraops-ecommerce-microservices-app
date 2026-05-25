@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: googlegrocery
-        image: 313476888052.dkr.ecr.us-east-1.amazonaws.com/shopping-site-googlegrocery:bce38b0f820a759095ae862f8de25465a984663a
+        image: 313476888052.dkr.ecr.us-east-1.amazonaws.com/shopping-site-googlegrocery:e8c8cb7c09334d2c46c973d17eabbd54e6c24bca
         ports:
         - containerPort: 80
 ---
